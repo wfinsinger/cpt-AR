@@ -1,11 +1,13 @@
-# cpt-AR (Change-point analysis with single influx records)
+cpt-AR
+(Change-point analysis with single influx records)
 
---
+-------------------------------------------------------------------------------------
 Determines zone boundaries for single influx records using the change-point analysis
 as described in Finsinger et al. (2016).
 
 --
 The function requires one input file with five columns:
+
 Column 1: depth          =   sample depth
 Column 2: age            =   sample age (as cal yrs BP)
 Column 3: sed.AR.Data    =   sediment accumulation rate as from age-depth model (as cm year-1)
@@ -25,7 +27,7 @@ The function also requires following additional parameters
                 n.screen datasets. By default n.screen = q * 0.025 (thus with q=1000 this equals
                 2.5% chance of occurrence) 
 
--
+-------------------------------------------------------------------------------------
 Suggested citation: Finsinger W., Magyari E.K., Fevre J., Orban I., Pal I., Vincze I., Hubay K,
                      Birks H.H., Braun M., Toth M.  (2016) – Holocene fire regimes near the treeline
                      in the Retezat Mts. (Southern Carpathians). Quaternary International.
