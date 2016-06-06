@@ -81,7 +81,7 @@ if(bootstrap) {
     rand = cbind(Data, Conc.rand)
     # plot(rand[,4], rand[,6], type="l", main=paste(Name, "- randised Conc"), xlab="Data Conc", ylab="rand Conc")
     
-    ## Calculate randAR with linear age-depth model and with records' age-depth model
+    ## Calculate randAR with constant age-depth model and with records' age-depth model
     
     sed.AR.median = median(rand$sed.AR.Data)
     
