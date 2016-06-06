@@ -27,4 +27,3 @@ Suggested citation: Finsinger W., Magyari E.K., Fevre J., Orban I., Pal I., Vinc
                      Birks H.H., Braun M., Toth M.  (2016) – Holocene fire regimes near the treeline
                      in the Retezat Mts. (Southern Carpathians). Quaternary International.
                      doi: 10.1016/j.quaint.2016.04.029. In press
-#
