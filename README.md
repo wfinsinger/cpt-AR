@@ -17,11 +17,11 @@ Column 4: Conc           =   concentration (as pieces cm-3)
 
 Column 5: AR             =   influx (or accumulation rate) value (as pieces cm-2 yr-1)
 
-NB: the data has to be interpolated to a constant temporal resolution!!
+
+# NB: the data has to be interpolated to a constant temporal resolution!!
 
 --
-The function also requires following additional parameters
-(which can be left at default values)
+The function also requires following additional parameters (which can be left at default values)
  Name      =   Site name
  
  bootstrap =   if FALSE the random dataset is generated with the runif() function
@@ -34,7 +34,7 @@ The function also requires following additional parameters
                 n.screen datasets. By default n.screen = q * 0.025 (thus with q=1000 this equals
                 2.5% chance of occurrence) 
 
---
+----
 See the example.csv file as a template for data input.
 
 -------------------------------------------------------------------------------------
