@@ -9,6 +9,7 @@ as described in Finsinger et al. (2016).
 The function requires one input file with five columns:
 
 Column 1: depth          =   sample depth
+
 Column 2: age            =   sample age (as cal yrs BP)
 Column 3: sed.AR.Data    =   sediment accumulation rate as from age-depth model (as cm year-1)
 Column 4: Conc           =   concentration (as pieces cm-3)
