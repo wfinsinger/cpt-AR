@@ -1,5 +1,4 @@
-# cpt-AR
-(Change-point analysis with single influx records)
+# cpt-AR (Change-point analysis with single influx records)
 
 -------------------------------------------------------------------------------------
 # Determines zone boundaries for single influx records using the change-point analysis
@@ -34,6 +33,9 @@ The function also requires following additional parameters
  n.screen  =   a change point in the random datasets is validated if it occurs in more than
                 n.screen datasets. By default n.screen = q * 0.025 (thus with q=1000 this equals
                 2.5% chance of occurrence) 
+
+--
+See the example.csv file as a template for data input.
 
 -------------------------------------------------------------------------------------
 Suggested citation: Finsinger W., Magyari E.K., Fevre J., Orban I., Pal I., Vincze I., Hubay K,
