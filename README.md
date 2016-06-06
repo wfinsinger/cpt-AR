@@ -23,6 +23,8 @@ The function also requires following additional parameters
  n.screen  =   a change point in the random datasets is validated if it occurs in more than
                 n.screen datasets. By default n.screen = q * 0.025 (thus with q=1000 this equals
                 2.5% chance of occurrence) 
+
+-
 Suggested citation: Finsinger W., Magyari E.K., Fevre J., Orban I., Pal I., Vincze I., Hubay K,
                      Birks H.H., Braun M., Toth M.  (2016) – Holocene fire regimes near the treeline
                      in the Retezat Mts. (Southern Carpathians). Quaternary International.
