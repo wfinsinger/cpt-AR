@@ -31,6 +31,7 @@ The function also requires following additional parameters (which can be left at
  n.Q       =   maximum number of change points
  
  n.screen  =   a change point in the random datasets is validated if it occurs in more than n.screen datasets.
+
 By default n.screen = q * 0.025 (thus with q=1000 this equals 2.5% chance of occurrence) 
 
 ----
