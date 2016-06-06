@@ -1,7 +1,7 @@
 # cpt-AR (Change-point analysis with single influx records)
 
 -------------------------------------------------------------------------------------
-# Determines zone boundaries for single influx records using the change-point analysis
+Determines zone boundaries for single influx records using the change-point analysis
 as described in Finsinger et al. (2016).
 
 --
