@@ -1,10 +1,10 @@
-# cpt-AR
-change-point analysis with single influx records
+# cpt-AR (Change-point analysis with single influx records)
 
-
+--
 Determines zone boundaries for single influx records using the change-point analysis
 as described in Finsinger et al. (2016).
 
+--
 The function requires one input file with five columns:
 Column 1: depth          =   sample depth
 Column 2: age            =   sample age (as cal yrs BP)
@@ -14,6 +14,7 @@ Column 5: AR             =   influx (or accumulation rate) value (as pieces cm-2
 
 NB: the data has to be interpolated to a constant temporal resolution!!
 
+--
 The function also requires following additional parameters
 (which can be left at default values)
  Name      =   Site name
