@@ -6,8 +6,7 @@ as described in Finsinger et al. (2016).
 
 In summary:
 
-The function uses records that were previously interpolated to constant temporal resolution.
-It determines change points in the proxy AR record (e.g. charcoal-accumulation rates (CHAR) or pollen-accumulation rates (PAR)).
+The function uses records that were previously interpolated to constant temporal resolution. \nIt determines change points in the proxy AR record (e.g. charcoal-accumulation rates (CHAR) or pollen-accumulation rates (PAR)).
 
 Because: 
 proxyAR (# cm-2 yr-1) = proxyConcentration (# cm-3) * sediment-accumulation rates (cm yr-1),
