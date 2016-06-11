@@ -9,7 +9,7 @@ In summary:
 The function uses records that were previously interpolated to constant temporal resolution. It determines change points in the proxy AR record (e.g. charcoal-accumulation rates (CHAR) or pollen-accumulation rates (PAR)).
 
 Because: 
-proxyAR (# cm-2 yr-1) = proxyConcentration (# cm-3) * sediment-accumulation rates (cm yr-1),
+- proxyAR (# cm-2 yr-1) = proxyConcentration (# cm-3) * sediment-accumulation rates (cm yr-1),
 
 the sediment-accumulation rates might strongly influence proxyAR records.
 
@@ -19,7 +19,7 @@ The assumption is that if change points appear both in the original proxyAR and 
 sediment-accumulation rates are probably not negligible.
 
 --
-The function requires one input file with five columns:
+The function requires one input file with seven columns:
 
 Column 1: CmI          =   top sample depth, interpolated
 
