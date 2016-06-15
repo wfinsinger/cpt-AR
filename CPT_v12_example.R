@@ -1,7 +1,9 @@
 rm(list = ls())
 
-# Set working directory
-setwd("/Users/wfinsing/Documents/R_packages/CHAR_Changepoint/CPT_v12")
+# Set your working directory where you previously copied the files in this directory
+# setwd("/Users/wfinsing/Documents/R_packages/CHAR_Changepoint/CPT_v12")
+setwd("...")
+
 
 # Load packages
 require(changepoint)
