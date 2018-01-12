@@ -41,12 +41,15 @@ proxy.cpt = function(serie, Name, bootstrap=F, q=1000, n.Q=10, n.screen=q*0.025,
   require(changepoint)
 
   # -------- Create output directory
+  if (dir.exists(output.dir) == T) {
+    cat("NB: Output directory already exists. Files are overwritten or added.\n\n")
+  } else {
   dir.create(output.dir)
+  }
   
   
 # ---------- Defines default parameters
 #   bootstrap = F
-#   resol = 40
 #   q = 1000
 #   n.Q = 10
 #   n.screen = q*0.025
@@ -61,7 +64,6 @@ proxy.cpt = function(serie, Name, bootstrap=F, q=1000, n.Q=10, n.screen=q*0.025,
 
 # --------- First sets some values useful in the following
 A <- serie
-# A <- Data.i
 ConcI = A[ ,6]
 sedArI = A[ ,3]
 A.length = length(ConcI)
@@ -231,7 +233,19 @@ if(bootstrap) {
   mtext(paste(Name), side = 3, line = 29.5, cex=0.8)
   dev.off()
   }
+  
+  # Extract depths and ages of change-points detected in the interpolated proxy series
+ Positions_cpts <- cpt.AR@cpts
+ Depths_cpts <- rand$CmI[cpt.AR@cpts]
+ Ages_cpts <- rand$AgeI[cpt.AR@cpts]
+ series.cpts <- cbind(Positions_cpts, Depths_cpts, Ages_cpts)
+  write.csv(series.cpts, file=file.path(output.dir, paste(Name,".csv", sep="")), row.names=F)
 
+  # Return output
+  output <- structure(list(Positions_cpts=Positions_cpts, Depths_cpts=Depths_cpts,
+                    Ages_cpts=Ages_cpts))
+  class(output) <- "ProxyCPT"
+  return(output)
  }
 
 
