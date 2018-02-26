@@ -1,45 +1,57 @@
 rm(list = ls())
 
 # Set your working directory where you previously copied the files in this directory
-# setwd("/Users/wfinsing/Documents/R_packages/CHAR_Changepoint/CPT_v12")
-setwd("...")
+ setwd("//Users/wfinsing/Documents/GitHub/cpt-AR")
+#setwd("...")
 
 
 # Load packages
-require(changepoint)
+library(changepoint)
 
 # Load cpt and pretreat.full source files
 source('cpt_v12.r')
 source('pretreatment_full.r')
 
-# Load a random charcoal dataset already formatted ####
-# for the pretreat.full function
-pip <- read.csv("random_CharConc.csv", header=T)
-
-
-# Interpolate records with pretreat.full function ####
-dat <- pip
-dat.i <- pretreat.full(params=dat[ ,c(1:5)], serie=dat$CharConc, yrInterp=40, plotit=T,Int=T)
-
-dat.i <- as.data.frame(dat.i)
-dat.i <- dat.i[which(complete.cases(dat.i)), ] # omits rows with NAs at bottom of data.frame
-
-# Check interpolated CHAR record with a plot
-x.lim <- c(max(dat.i$AgeI), min(dat.i$AgeI))
-par(mfrow=c(3,1))
-par(mar = c(0.5,5,0.5,1))
-par(oma = c(5,1,1,1), cex=0.7)
-plot(dat.i$AgeI, dat.i$ConcI, xlim=x.lim, type="s", xaxt="n", ylab="random char.\nconc. interp.")
-plot(dat.i$AgeI, dat.i$ArI, xlim=x.lim, type="s", xaxt="n", ylab="random CHAR\ninterpolated")
-plot(dat.i$AgeI, dat.i$sedArI, xlim=x.lim, type="s", ylab="sediment AR\n(cm/yr)")
-
-# Analyse the record with the change-point analysis function "proxy.cpt()" ####
-proxy.cpt(serie=dat.i, Name="Pip_NoBoot")
-proxy.cpt(serie=dat.i, Name="Pip_NoBoot_Penalty3log", bootstrap = F, penalty = "3*log(n)")
-
-toRm = c("dat", "dat.i", "pip", "x.lim")
-rm(list = toRm)
-
+# # Load a random charcoal dataset already formatted ####
+# # for the pretreat.full function
+# pip <- read.csv("random_CharConc.csv", header=T)
+# 
+# # Visualise relationships between CharConc, Sediment-acc.rates, and Charcoal-acc. rates
+# pip.sar <- 1/c(diff(pip$AgeTop), NA)
+# pip.dept <- 1/pip.sar
+# pip.char <- pip$CharConc * pip.sar
+# 
+# par(mfrow=c(5,1), mar = c(0.5,5,0.5,1), oma = c(5,1,1,1), cex=0.7)
+# plot(pip$AgeTop, pip$CharConc, type="l", ylab="CharConc\n(#/cm3)", xaxt="n")
+# plot(pip$AgeTop, pip$CmTop, type="l", ylab="Depth\n(cm)", xaxt="n")
+# plot(pip$AgeTop, pip.sar, type="l", ylab="Sed.Acc.Rate\n(cm/yr)", xaxt="n")
+# plot(pip$AgeTop, pip.dept, type="l", ylab="Sed.Dep.t.\n(yr/cm)", xaxt="n")
+# plot(pip$AgeTop, pip.char, type="l", ylab="CHAR\n(Conc*SAR)")
+# 
+# 
+# # Interpolate records with pretreat.full function ####
+# dat <- pip
+# dat.i <- pretreat.full(params=dat[ ,c(1:5)], serie=dat$CharConc, yrInterp=40, plotit=T,Int=T)
+# 
+# dat.i <- as.data.frame(dat.i)
+# dat.i <- dat.i[which(complete.cases(dat.i)), ] # omits rows with NAs at bottom of data.frame
+# 
+# # Check interpolated CHAR record with a plot
+# x.lim <- c(max(dat.i$AgeI), min(dat.i$AgeI))
+# par(mfrow=c(3,1))
+# par(mar = c(0.5,5,0.5,1))
+# par(oma = c(5,1,1,1), cex=0.7)
+# plot(dat.i$AgeI, dat.i$ConcI, xlim=x.lim, type="s", xaxt="n", ylab="random char.\nconc. interp.")
+# plot(dat.i$AgeI, dat.i$ArI, xlim=x.lim, type="s", xaxt="n", ylab="random CHAR\ninterpolated")
+# plot(dat.i$AgeI, dat.i$sedArI, xlim=x.lim, type="s", ylab="sediment AR\n(cm/yr)")
+# 
+# # Analyse the record with the change-point analysis function "proxy.cpt()" ####
+# proxy.cpt(serie=dat.i, Name="Pip_NoBoot")
+# proxy.cpt(serie=dat.i, Name="Pip_NoBoot_Penalty3log", bootstrap = F, penalty = "3*log(n)")
+# 
+# toRm = c("dat", "dat.i", "pip", "x.lim")
+# rm(list = toRm)
+# 
 
 
 
@@ -75,9 +87,7 @@ pip1 <- pip1[which(complete.cases(pip1)), ] # removes last row where AgeBot = NA
 
 # Interpolate records with pretreatment function ####
 dat <- pip1
-
 dat.i <- pretreat.full(params=dat[ ,c(1:5)], serie=dat$CharConc, yrInterp=40, plotit=T,Int=T)
-
 dat.i <- as.data.frame(dat.i)
 dat.i <- dat.i[which(complete.cases(dat.i)), ] # omits rows with NAs
 
@@ -92,6 +102,6 @@ plot(dat.i$AgeI, dat.i$sedArI, xlim=x.lim, type="s", ylab="sediment AR\n(cm/yr)"
 
 
 # Analyse the record with the change-point analysis function "proxy.cpt()" ####
-proxy.cpt(serie=dat.i, Name="Pip1_NoBoot")
-proxy.cpt(serie=dat.i, Name="Pip1_NoBoot_Penalty3log", bootstrap = F, penalty = "3*log(n)")
+Pip1_NoBoot <- proxy.cpt(serie=dat.i, Name="Pip1_NoBoot")
+Pip1_NoBoot_Penalty3log <- proxy.cpt(serie=dat.i, Name="Pip1_NoBoot_Penalty3log", bootstrap=F, penalty="3*log(n)")
 
