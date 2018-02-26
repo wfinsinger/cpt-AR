@@ -238,8 +238,6 @@ if(bootstrap) {
  Positions_cpts <- cpt.AR@cpts
  Depths_cpts <- rand$CmI[cpt.AR@cpts]
  Ages_cpts <- rand$AgeI[cpt.AR@cpts]
- series.cpts <- cbind(Positions_cpts, Depths_cpts, Ages_cpts)
-  write.csv(series.cpts, file=file.path(output.dir, paste(Name,".csv", sep="")), row.names=F)
 
   # Return output
   output <- structure(list(Positions_cpts=Positions_cpts, Depths_cpts=Depths_cpts,
