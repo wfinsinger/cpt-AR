@@ -49,11 +49,12 @@ proxy.cpt = function(serie, Name, bootstrap=F, q=1000, n.Q=10, n.screen=q*0.025,
   
   
 # ---------- Defines default parameters
-#   bootstrap = F
-#   q = 1000
-#   n.Q = 10
-#   n.screen = q*0.025
-#   penalty = "4*log(n)"
+  # bootstrap = F
+  # q = 1000
+  # n.Q = 10
+  # n.screen = q*0.025
+  # penalty = "4*log(n)"
+  # output.dir <- "./cpt_output"
   
 # ---------- Settings giving relatively robust results with Lia and Brazi CHARc and 'runif' function
   cpt.test=cpt.meanvar
