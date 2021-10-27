@@ -1,25 +1,26 @@
 # cpt-AR (Change-point analysis with single Accumulation Rate records)
 
 -------------------------------------------------------------------------------------
-Determines zone boundaries for single influx records using the change-point analysis
-as described in Finsinger et al. (2016).
+Determines zone boundaries for single influx records using the change-point analysis.
 
 In summary:
 
 The function uses records that were previously interpolated to constant temporal resolution. It determines change points in the proxy AR record (e.g. charcoal-accumulation rates (CHAR) or pollen-accumulation rates (PAR)).
 
-Because: 
-- proxyAR (# cm-2 yr-1) = proxyConcentration (# cm-3) * sediment-accumulation rates (cm yr-1),
+Rationale: 
+
+Because 
+proxyAR (# cm-2 yr-1) = proxyConcentration (# cm-3) * sediment-accumulation rates (cm yr-1),
 
 the sediment-accumulation rates might strongly influence proxyAR records.
 
-To test this (somehow), the proxy.cpt() function in this script generates iteratively a number of random concentration record, calculates accumulation rates using the information from the age-depth model, and then looks at change points in the randomAR records.
+To test this, the proxy.cpt() function generates iteratively a series of random concentration records, calculates for each of those records accumulation rates (hereafter randomAR records) using the information from the depth-age model, and then looks at change points in the randomAR records.
 
-The assumption is that if change points appear both in the original proxyAR and in the randomAR records, then the influence of the
-sediment-accumulation rates are probably not negligible.
+The assumption is that if change points appear both in the original proxyAR and in the randomAR records, then the influence of the sediment-accumulation rates is probably not negligible.
 
 --
-The function requires one input file with seven columns:
+The function requires one input file with seven columns.
+The input file can, for instace, be generated using the pretreatment() function (as from the paleofire package):
 
 Column 1: CmI          =   top sample depth, interpolated
 
