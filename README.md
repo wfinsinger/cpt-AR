@@ -3,6 +3,8 @@
 -------------------------------------------------------------------------------------
 Determines zone boundaries for single influx records using the change-point analysis.
 
+NOTE: as of February 2023, this stand-alone function has been included in the 'tapas' package. See https://github.com/wfinsinger/tapas for further details.
+
 In summary:
 
 The function uses records that were previously interpolated to constant temporal resolution. It determines change points in the proxy AR record (e.g. charcoal-accumulation rates (CHAR) or pollen-accumulation rates (PAR)).
